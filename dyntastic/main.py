@@ -6,12 +6,7 @@ from typing import Any, Callable, Dict, Generator, Generic, List, Optional, Tupl
 
 import boto3
 
-try:
-    # Python 3.8+
-    import importlib.metadata as _metadata
-except ModuleNotFoundError:  # pragma: no cover
-    # Python 3.7
-    import importlib_metadata as _metadata  # type: ignore[no-redef, unused-ignore]
+import importlib.metadata as _metadata
 
 from contextvars import ContextVar
 

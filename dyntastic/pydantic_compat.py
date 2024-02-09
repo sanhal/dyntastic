@@ -68,17 +68,7 @@ elif IS_VERSION_1:
 
 else:
     from typing import Union
-
-    try:
-        # Python >= 3.8
-        from typing import get_args, get_origin
-    except ImportError:
-        # Python 3.7
-        def get_args(t):
-            return getattr(t, "__args__", ())
-
-        def get_origin(t):
-            return getattr(t, "__origin__", None)
+    from typing import get_args, get_origin
 
     from pydantic.fields import FieldInfo
 
