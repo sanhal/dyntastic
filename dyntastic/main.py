@@ -6,8 +6,6 @@ from typing import Any, Callable, Dict, Generator, Generic, List, Optional, Tupl
 
 import boto3
 
-import importlib.metadata as _metadata
-
 from contextvars import ContextVar
 
 from boto3.dynamodb.conditions import ConditionBase
@@ -19,7 +17,7 @@ from .batch import BatchWriter, invoke_with_backoff
 from .exceptions import DoesNotExist
 from .transact import current_transaction_writer
 
-__version__ = _metadata.version("dyntastic")
+
 
 _T = TypeVar("_T", bound="Dyntastic")
 
