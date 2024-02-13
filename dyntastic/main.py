@@ -6,13 +6,6 @@ from typing import Any, Callable, Dict, Generator, Generic, List, Optional, Tupl
 
 import boto3
 
-try:
-    # Python 3.8+
-    import importlib.metadata as _metadata
-except ModuleNotFoundError:  # pragma: no cover
-    # Python 3.7
-    import importlib_metadata as _metadata  # type: ignore[no-redef, unused-ignore]
-
 from contextvars import ContextVar
 
 from boto3.dynamodb.conditions import ConditionBase
@@ -24,7 +17,7 @@ from .batch import BatchWriter, invoke_with_backoff
 from .exceptions import DoesNotExist
 from .transact import current_transaction_writer
 
-__version__ = _metadata.version("dyntastic")
+
 
 _T = TypeVar("_T", bound="Dyntastic")
 
